@@ -1,20 +1,13 @@
-import React, { FormEvent } from "react"; // 引入 FormEvent 型別
+import React from "react";
 
-interface Props {
-  handleSubmit: (e: FormEvent<HTMLButtonElement>) => void; // 加上明確的型別標註
-  revText: React.RefObject<HTMLInputElement>; // 加上明確的型別標註
-  labelText: string; // 加上明確的型別標註
-  defaultValue: any; // 加上明確的型別標註，這裡可能需要更精確的型別
-}
-
-const ReviewForm: React.FC<Props> = ({ handleSubmit, revText, labelText, defaultValue }) => {
+const ReviewForm: React.FC = ({ handleSubmit, revText, labelText, defaultValue }) => {
   return (
-    <div>
-      <div className="mb-3">
-        <div>{labelText}</div>
-        <input ref={revText} defaultValue={defaultValue} /> {/* 確保 ref 和 defaultValue 的型別符合 */}
+    <div className="space-y-3">
+      <div className="space-y-2">
+        <p>{labelText}</p>
+        <textarea className="w-full pt-4 pb-12 pl-4 rounded-lg outline-none text-bgColor" ref={revText} defaultValue={defaultValue} />
       </div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="px-4 py-1 font-bold rounded-md border-[1px] border-secondary text-secondary hover:bg-secondary hover:text-bgColor" onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
