@@ -9,3 +9,11 @@ export type Movie = {
 	backdrops: string[]
 	reviewIds: string[]
 }
+
+export type Review = {
+	_id: string
+	body: string
+	created: Date
+	updated: Date
+	_class: string
+}
