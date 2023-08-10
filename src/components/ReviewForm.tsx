@@ -1,6 +1,13 @@
-import React from "react";
+import React, { RefObject } from "react";
 
-const ReviewForm: React.FC = ({ handleSubmit, revText, labelText, defaultValue }) => {
+interface ReviewFormProps {
+  handleSubmit: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  revText: RefObject<HTMLTextAreaElement>;
+  labelText: string;
+  defaultValue?: string;
+}
+
+const ReviewForm: React.FC<ReviewFormProps> = ({ handleSubmit, revText, labelText, defaultValue }) => {
   return (
     <div className="space-y-3">
       <div className="space-y-2">
