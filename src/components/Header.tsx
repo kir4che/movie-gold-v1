@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
   return (
-    <header className="container mx-auto">
+    <header className="container px-4 mx-auto">
       <div className="flex items-center py-4 space-x-5">
         <div className="flex items-center space-x-1 text-secondary">
           <FontAwesomeIcon icon={faVideoSlash} />
